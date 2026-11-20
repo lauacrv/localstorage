@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7847d8">
+    <title>LocalStorage | Mi espacio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="page">
+        <header class="hero">
+            <p class="eyebrow">✨ Tu espacio local</p>
+            <h1>Mis recuerdos</h1>
+            <p>Guarda nombres y datos de tu mascota en este navegador, de forma simple y con mucho color.</p>
+        </header>
+
+        <div class="card-grid">
+            <section class="card">
+                <div class="card-heading">
+                    <span class="icon" aria-hidden="true">💜</span>
+                    <h2><span class="step">01 · Nombres</span>Guardar nombre</h2>
+                </div>
+                <label class="field" for="nombreGuardar">¿Cómo se llama?</label>
+                <input type="text" id="nombreGuardar" placeholder="Escribe un nombre" autocomplete="name">
+                <button type="button" onclick="guardarNombre()">Guardar nombre</button>
+                <p class="result" id="resultadoGuardar" aria-live="polite"></p>
+            </section>
+
+            <section class="card">
+                <div class="card-heading">
+                    <span class="icon" aria-hidden="true">📋</span>
+                    <h2><span class="step">02 · Tu lista</span>Ver nombres guardados</h2>
+                </div>
+                <p class="note">Consulta todos los nombres que has guardado.</p>
+                <button class="button-secondary" type="button" onclick="mostrarNombres()">Mostrar nombres</button>
+                <div class="result" id="resultadoMostrar" aria-live="polite"></div>
+            </section>
+
+            <section class="card">
+                <div class="card-heading">
+                    <span class="icon" aria-hidden="true">✏️</span>
+                    <h2><span class="step">03 · Actualizar</span>Editar un nombre</h2>
+                </div>
+                <label class="field" for="posicionEditar">Posición en la lista</label>
+                <input type="number" id="posicionEditar" min="1" step="1" placeholder="Ej. 1">
+                <label class="field" for="nuevoNombre">Nuevo nombre</label>
+                <input type="text" id="nuevoNombre" placeholder="Escribe el nombre nuevo">
+                <p class="note">Usa la posición que aparece en tu lista (empezando por 1).</p>
+                <button type="button" onclick="editarNombre()">Actualizar nombre</button>
+                <p class="result" id="resultadoEditar" aria-live="polite"></p>
+            </section>
+
+            <section class="card">
+                <div class="card-heading">
+                    <span class="icon" aria-hidden="true">🧹</span>
+                    <h2><span class="step">04 · Reiniciar</span>Eliminar nombres</h2>
+                </div>
+                <p class="note">Esta acción elimina toda tu lista de nombres guardados.</p>
+                <button class="button-danger" type="button" onclick="eliminarNombres()">Eliminar todos</button>
+                <p class="result" id="resultadoEliminar" aria-live="polite"></p>
+            </section>
+
+            <section class="card">
+                <div class="card-heading">
+                    <span class="icon" aria-hidden="true">🐾</span>
+                    <h2><span class="step">05 · Mi mascota</span>Guardar mascota</h2>
+                </div>
+                <label class="field" for="mascota">Nombre de tu mascota</label>
+                <input type="text" id="mascota" placeholder="Ej. Luna">
+                <label class="field" for="raza">Raza</label>
+                <input type="text" id="raza" placeholder="Ej. Mestiza">
+                <label class="field" for="edad">Edad</label>
+                <input type="number" id="edad" min="0" step="1" placeholder="Edad en años">
+                <button type="button" onclick="guardarMascota()">Guardar mascota</button>
+                <p class="result" id="resultadoMascota" aria-live="polite"></p>
+            </section>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
